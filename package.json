@@ -21,8 +21,7 @@
     "build": "rimraf dist && rollup -c rollup.config.js && rimraf dist/**/sw.* && rimraf dist/**/workbox-*.*",
     "deploy": "npm publish src",
     "deploy:test": "npm publish src --dry-run",
-    "doc": "./node_modules/.bin/wca analyze src --format markdown --outDir docs/elements",
-    "doc:wc": "./node_modules/.bin/wca analyze src --outFiles custom-elements.json"
+    "doc": "./node_modules/.bin/wca analyze src --format markdown --outDir docs/elements"
   },
   "dependencies": {
     "lit": "^2.0.0-pre.2",
@@ -30,16 +29,16 @@
     "prismjs": "^1.23.0"
   },
   "devDependencies": {
-    "@web/dev-server": "^0.1.11",
-    "@web/test-runner": "^0.12.19",
-    "@open-wc/testing": "^2.5.32",
-    "@web/dev-server-storybook": "^0.3.5",
     "@open-wc/building-rollup": "^1.9.4",
-    "rollup-plugin-copy": "^3.4.0",
+    "@open-wc/testing": "^2.5.32",
+    "@web/dev-server": "^0.1.11",
+    "@web/dev-server-storybook": "^0.3.5",
+    "@web/test-runner": "^0.12.19",
     "deepmerge": "^4.2.2",
+    "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
     "rollup": "^2.45.2",
-    "npm-run-all": "^4.1.5",
+    "rollup-plugin-copy": "^3.4.0",
     "web-component-analyzer": "^1.1.6"
   }
 }
