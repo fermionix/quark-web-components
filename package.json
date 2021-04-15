@@ -1,0 +1,41 @@
+{
+  "name": "quark-web-components",
+  "version": "0.0.0",
+  "description": "Quark Web Components",
+  "author": "Paul H Mason",
+  "license": "MIT",
+  "main": "index.js",
+  "module": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PaulHMason/quark-web-components.git"
+  },
+  "scripts": {
+    "start": "web-dev-server --app-index demo/index.html --node-resolve --open",
+    "start:build": "npm run build && web-dev-server --root-dir dist --app-index index.html --open --compatibility none",
+    "test": "web-test-runner test/**/*.test.js --node-resolve",
+    "test:coverage": "web-test-runner test/**/*.test.js --node-resolve --coverage",
+    "test:current": "web-test-runner test/xxx.js --node-resolve --coverage",
+    "storybook": "web-dev-server -c .storybook/server.mjs",
+    "storybook:build": "build-storybook",
+    "build": "rimraf dist && rollup -c rollup.config.js && rimraf dist/**/sw.* && rimraf dist/**/workbox-*.*",
+    "deploy": "npm publish src",
+    "deploy:test": "npm publish src --dry-run"
+  },
+  "dependencies": {
+    "lit": "^2.0.0-pre.2",
+    "marked": "^2.0.0",
+    "prismjs": "^1.23.0"
+  },
+  "devDependencies": {
+    "@web/dev-server": "^0.1.11",
+    "@web/test-runner": "^0.12.19",
+    "@open-wc/testing": "^2.5.32",
+    "@web/dev-server-storybook": "^0.3.5",
+    "@open-wc/building-rollup": "^1.9.4",
+    "rollup-plugin-copy": "^3.4.0",
+    "deepmerge": "^4.2.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.45.2"
+  }
+}

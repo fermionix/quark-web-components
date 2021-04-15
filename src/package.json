@@ -1,0 +1,21 @@
+{
+  "name": "quark-web-components",
+  "version": "0.0.0",
+  "description": "Quark Web Components",
+  "author": "Paul H Mason",
+  "license": "MIT",
+  "main": "",
+  "module": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PaulHMason/quark-web-components.git"
+  },
+  "dependencies": {
+    "lit": "^2.0.0-pre.2",
+    "marked": "^2.0.0",
+    "prismjs": "^1.23.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
