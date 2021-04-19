@@ -8,7 +8,7 @@ import { css, CSSResultGroup } from 'lit';
 const display: CSSResultGroup = css`
     .typography-display {
         font-size: 2.125rem;
-        line-height: 2.5rem;
+        line-height: 2.8rem;
         letter-spacing: 0.0074em;
         font-weight: 400;
         -webkit-font-smoothing: antialiased;

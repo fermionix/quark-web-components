@@ -17,6 +17,190 @@ import { Meta } from '@storybook/addon-docs/blocks';
     td: {
         background-color: yellow !important;
     }
+
+    /* TYPOGRAPHY */
+    /* 34px */
+    .typography-display {
+        font-size: 2.125rem;
+        line-height: 2.8rem;
+        letter-spacing: 0.0074em;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+
+    /* 24px */
+    .typography-headline {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        letter-spacing: normal;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* 20px */
+    .typography-title {
+        font-size: 1.25rem;
+        line-height: 2rem;
+        letter-spacing: 0.0075em;
+        font-weight: 500;
+        -webkit-font-smoothing: antialiased;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* 16px */
+    .typography-subtitle {
+        font-size: 1rem;
+        line-height: 1.75rem;
+        letter-spacing: 0.0094em;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* 13px */
+    .typography-body {
+        font-size: 0.8125rem;
+        line-height: 1.15rem;
+        letter-spacing: 0.0179em;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* 12px */
+    .typography-action {
+        font-size: 0.75rem;
+        line-height: 1.25rem;
+        letter-spacing: 0.0333em;
+        text-transform: uppercase;
+        font-weight: 500;
+        -webkit-font-smoothing: antialiased;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* 11px */
+    .typography-caption {
+        font-size: 0.6875rem;
+        line-height: 1.15rem;
+        letter-spacing: 0.0333em;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; 
+    }
+
+    /* 10px -> 11px */
+    .typography-overline {
+        /*font-size: 0.625rem;*/
+        font-size: 0.6875rem;
+        line-height: 2rem;
+        letter-spacing: 0.1500em;
+        text-transform: uppercase;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* 14px */
+    .typography-code {
+        font-family: 'Roboto Mono', monospace;
+        font-size: .8125rem;
+        line-height: 1.25rem;
+        letter-spacing: normal;
+        font-weight: 400;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* ELEVATION */
+    .elevation-container {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        background-color: #F0F0F0;
+        padding: 32px;
+    }
+
+    .elevation-container > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 120px;
+        height: 120px;
+        margin: 12px 12px;
+        color: rgba(0, 0, 0, 0.38);
+        background: white;
+        font-size: 16px;
+        font-weight: 500;
+        transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .elevation-0 {
+        box-shadow: none;
+    }
+
+    .elevation-1 {
+        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+                    0 1px 3px 0 rgba(0, 0, 0, 0.12),
+                    0 2px 1px -1px rgba(0, 0, 0, 0.2);
+    }
+
+    .elevation-2 {
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                    0 1px 5px 0 rgba(0, 0, 0, 0.12),
+                    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    }
+
+    .elevation-3 {
+        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14),
+                    0 1px 8px 0 rgba(0, 0, 0, 0.12),
+                    0 3px 3px -2px rgba(0, 0, 0, 0.4);
+    }
+
+    .elevation-4 {
+        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+                    0 1px 10px 0 rgba(0, 0, 0, 0.12),
+                    0 2px 4px -1px rgba(0, 0, 0, 0.4);
+    }
+
+    .elevation-6 {
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14),
+                    0 1px 18px 0 rgba(0, 0, 0, 0.12),
+                    0 3px 5px -1px rgba(0, 0, 0, 0.4);
+    }
+
+    .elevation-8 {
+        box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                    0 3px 14px 2px rgba(0, 0, 0, 0.12),
+                    0 5px 5px -3px rgba(0, 0, 0, 0.4);
+    }
+
+    .elevation-12 {
+        box-shadow: 0 12px 16px 1px rgba(0, 0, 0, 0.14),
+                    0 4px 22px 3px rgba(0, 0, 0, 0.12),
+                    0 6px 7px -4px rgba(0, 0, 0, 0.4);
+    }
+
+    .elevation-16 {
+        box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+                    0 6px 30px 5px rgba(0, 0, 0, 0.12),
+                    0 8px 10px -5px rgba(0, 0, 0, 0.4);
+    }
+
+    .elevation-24 {
+        box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),
+                    0 9px 46px 8px rgba(0, 0, 0, 0.12),
+                    0 11px 15px -7px rgba(0, 0, 0, 0.4);
+    }
 `}</style>
 
 # Styling
@@ -136,10 +320,260 @@ Using the theme colors is trivial, you just use the appropriate CSS custom varia
 }
 ```
 
+This will work with any JavaScript application framework or library.
+
 ## Typography
 
-TODO
+A simplified version of the Material Design guidelines for typography is used, which is mostly based on V1, with a bit from V2 (overline) and the addition of a 'code' (monospace) style. To use the styles you should use the following [Google Web Fonts](https://fonts.google.com/) in your main document:
+
+### Font Importing
+
+The predefined font styles depend on the use of the Roboto (normal and monospace) and Noto fonts. You should always use these fonts as other fonts will probably give inconsistent styling.
+
+#### Roboto
+
+Use just the Roboto font if you don't need monospace or simplified Chinese support.
+
+```html
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- OR -->
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+</style>
+```
+
+Use the following CSS rule:
+
+```css
+font-family: 'Roboto', sans-serif;
+```
+
+#### Roboto + Noto
+
+If you need simplified Chinese support, use the following:
+
+```html
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- OR -->
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap');
+</style>
+```
+
+Use the following CSS rule:
+
+```css
+font-family: 'Roboto', sans-serif;
+font-family: 'Noto Sans SC', sans-serif;
+```
+
+#### Roboto + Roboto Mono + Noto
+
+If you need simplified Chinese support and Roboto monospace (for code samples), use the following:
+
+```html
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Roboto+Mono&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- OR -->
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&family=Roboto+Mono&family=Roboto:wght@300;400;500&display=swap');
+</style>
+```
+
+Use the following CSS rule:
+
+```css
+font-family: 'Roboto', sans-serif;
+font-family: 'Noto Sans SC', sans-serif;
+font-family: 'Roboto Mono', monospace;
+```
+*You can obviously mix and match the Roboto and Mono fonts however you need.*
+
+### Predefined Typography Styles
+
+The following font styles are provided as CSS classes *via* LitElement CSS module exports, or a plain CSS file:
+
+|Name                                           |CSS Class          |Module Export|Size|Weight |Case    |
+|-----------------------------------------------|-------------------|-------------|----|-------|--------|
+|<div class="typography-display">Display</div>  |typography-display |display      |34px|Regular|Sentence|
+|<div class="typography-headline">Headline</div>|typography-headline|headline     |24px|Regular|Sentence|
+|<div class="typography-title">Title</div>      |typography-title   |title        |20px|Medium |Sentence|
+|<div class="typography-subtitle">Subtitle</div>|typography-subtitle|subtitle     |16px|Regular|Sentence|
+|<div class="typography-body">Body</div>        |typography-body    |body         |13px|Regular|Sentence|
+|<div class="typography-action">Action</div>    |typography-action  |action       |12px|Medium |All caps|
+|<div class="typography-caption">Caption</div>  |typography-caption |caption      |11px|Regular|Sentence|
+|<div class="typography-overline">Overline</div>|typography-overline|overline     |11px|Regular|All caps|
+|<div class="typography-code">Code</div>        |typography-code    |code         |14px|Regular|Sentence|
+
+### Usage
+
+How you use the font styles depends on which JavaScript framework or library you're using. Currently, the following are supported:
+
+* LitElement
+
+#### LitElement
+
+To use the typography styles, you first need to import the style classes you want to use.
+
+```javascript
+// Import individual styles.
+import { body, caption } from 'quark-web-components/styles/typography.js';
+
+// Import all the styles.
+import { typography } from 'quark-web-components/styles/typography.js';
+```
+
+Then add the typography style imports to your element static style getter (don't forget to do this):
+
+```javascript
+static get styles() {
+    return [body, caption, css`
+        :host {
+            display: block;
+        }
+    `];
+}
+
+// OR
+
+static get styles() {
+    return [typography, css`
+        :host {
+            display: block;
+        }
+    `];
+}
+```
+
+Finally, use the style classes to your markup (the class name is the module import name with a `typography-` prefix):
+
+```javascript
+render() {
+    return html`
+        <div class="typography-body">Body</div>
+        <div class="typography-caption">Caption</div>
+    `;
+}
+```
 
 ## Elevation
 
-TODO
+Material Design uses drop shadows to simulate elevation (raised elements). This is supported *via* LitElement CSS module exports that exports CSS classes for each elevation height that can either be applied directly the a custom element (styles :host) or elements within an element. The 0, 1, 2, 3, 4, 6, 8, 12, 16 and 24 pixel height elevations are supported.
+
+<div class="elevation-container">
+    <div class="elevation-0">0</div>
+    <div class="elevation-1">1</div>
+    <div class="elevation-2">2</div>
+    <div class="elevation-3">3</div>
+    <div class="elevation-4">4</div>
+    <div class="elevation-6">6</div>
+    <div class="elevation-8">8</div>
+    <div class="elevation-12">12</div>
+    <div class="elevation-16">16</div>
+    <div class="elevation-24">24</div>
+</div>
+
+### Usage
+
+How you use the elevation styles depends on which JavaScript framework or library you're using. Currently, the following are supported:
+
+* LitElement
+
+#### LitElement
+
+The method for styling the host or child elements is slightly different.
+
+##### Host Elevation
+
+The host elevation imports are named `hostElevation{x}`, where `x` is the elevation height and adds a class with a `:host([elevation="x"])` selector to the styles. You set the elevation by simply adding an `elevation` attribute with the appropriate value to the element when you use it.
+
+Firstly, import the host elevations you want to use, either individually or the whole lot.
+
+```javascript
+// Import individual host elevations.
+import { hostElevation1, hostElevation2 } from 'quark-web-components/styles/elevation.js';
+
+// Import all the host elevations.
+import { hostElevation } from 'quark-web-components/styles/elevation.js';
+```
+
+Then add the host elevation style imports to your element static style getter (don't forget to do this):
+
+```javascript
+static get styles() {
+    return [hostElevation1, hostElevation2, css`
+        :host {
+            display: block;
+        }
+    `];
+}
+
+// OR
+
+static get styles() {
+    return [hostElevation, css`
+        :host {
+            display: block;
+        }
+    `];
+}
+```
+
+Now, consumers of your element can apply an elevation by using the `elevation` attribute.
+
+```html
+<my-element elevation="1"></my-element>
+<my-element elevation="2"></my-element>
+```
+
+##### Child Elevation
+
+The child elevation imports are named `elevation{x}`, where `x` is the elevation height and adds a class called `elevation-{x}` to the element styles. You set the elevation by simply adding the `elevation-{x}` class to the child element that needs an elevation.
+
+Firstly, import the child elevations you want to use, either individually or the whole lot.
+
+```javascript
+// Import individual child elevations.
+import { elevation1, elevation2 } from 'quark-web-components/styles/elevation.js';
+
+// Import all the child elevations.
+import { elevation } from 'quark-web-components/styles/elevation.js';
+```
+
+Then add the child elevation style imports to your element static style getter (don't forget to do this):
+
+```javascript
+static get styles() {
+    return [elevation1, elevation2, css`
+        :host {
+            display: block;
+        }
+    `];
+}
+
+// OR
+
+static get styles() {
+    return [elevation, css`
+        :host {
+            display: block;
+        }
+    `];
+}
+```
+
+Finally, use the `elevation-{x}` classes.
+
+```javascript
+render() {
+    return html`
+        <div class="elevation-1">Elevation 1</div>
+        <div class="elevation-2">Elevation 2</div>
+    `;
+}
+```
