@@ -22,12 +22,12 @@
     "test:coverage": "tsc && wtr --coverage",
     "test:watch": "tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
     "doc:wc": "./node_modules/.bin/wca analyze src --outFile ./custom-elements.json",
-    "doc:md": "./node_modules/.bin/wca analyze src --format markdown --outDir docs/elements",
+    "doc:md": "./node_modules/.bin/wca analyze src --format markdown --outDir docs-md/elements",
     "doc": "run-s doc:wc doc:md",
     "storybookxxx": "rimraf build && tsc && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wds -c .storybook/server.mjs\"",
     "storybook:buildxxx": "rimraf build && tsc && build-storybook",
     "storybook": "rimraf build && tsc && start-storybook -p 6006",
-    "build-storybook": "rimraf build && tsc && build-storybook"
+    "build-storybook": "rimraf build && tsc && build-storybook --output-dir docs"
   },
   "dependencies": {
     "lit": "^2.0.0-pre.2",
