@@ -1,0 +1,150 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "qk-element",
+      "path": "./src\\qk-element\\qk-element.ts",
+      "description": "`QkElement` is the base class of all the Quark elements.\r\n\r\n## Usage\r\n\r\nYou simply use `QkElement` as your base class, rather than `LitElement` or `HTMLElement`.\r\n\r\n```javascript\r\nimport { html, css, QkElement } from 'quark-web-components/qk-element/qk-element.js';\r\n\r\nexport class MyElement extends QkElement {\r\n    static get styles() {\r\n        return [css`\r\n            :host {\r\n                display: block;\r\n            }\r\n    \r\n            :host([hidden]) {\r\n                display: none !important;\r\n            }\r\n    \r\n            :host([disabled]) {\r\n                pointer-events: none;\r\n            }\r\n        `];\r\n    }\r\n\r\n    constructor() {\r\n        super();\r\n        this.disabled = false;\r\n        this.role = 'button';\r\n    }\r\n}\r\n\r\nwindow.customElements.define('my-element', MyElement);\r\n```",
+      "attributes": [
+        {
+          "name": "disabled",
+          "description": "If true, the element will be disabled.",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "role",
+          "description": "The ARIA role of the element.",
+          "type": "String",
+          "default": "\"\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "disabled",
+          "attribute": "disabled",
+          "description": "If true, the element will be disabled.",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "role",
+          "attribute": "role",
+          "description": "The ARIA role of the element.",
+          "type": "String",
+          "default": "\"\""
+        }
+      ]
+    },
+    {
+      "name": "qk-input-element",
+      "path": "./src\\qk-input-element\\qk-input-element.ts",
+      "description": "`QkInputElement` is the base class of all the Qk input elements.\r\n\r\n## Usage\r\n\r\nYou simply use `QkInputElement` as your base class, rather than `LitElement` or `HTMLElement`.\r\n\r\n```javascript\r\nimport { html, css, QkInputElement } from 'quark-web-components/qk-input-element/qk-input-element.js';\r\n\r\nexport class MyElement extends QkInputElement {\r\n    static get styles() {\r\n        return [css`\r\n            :host {\r\n                display: block;\r\n            }\r\n    \r\n            :host([hidden]) {\r\n                display: none !important;\r\n            }\r\n    \r\n            :host([disabled]) {\r\n                pointer-events: none;\r\n            }\r\n        `];\r\n    }\r\n\r\n    constructor() {\r\n        super();\r\n        this.role = 'button';\r\n        this.name = 'My Button';\r\n    }\r\n}\r\n\r\nwindow.customElements.define('my-element', MyElement);\r\n```",
+      "attributes": [
+        {
+          "name": "name",
+          "description": "The ARIA name of the element.",
+          "type": "String",
+          "default": "\"\""
+        },
+        {
+          "name": "hasFocus",
+          "description": "(readonly) Whether or not the element has focus.",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "disabled",
+          "description": "If true, the element will be disabled.",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "role",
+          "description": "The ARIA role of the element.",
+          "type": "String",
+          "default": "\"\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "name",
+          "attribute": "name",
+          "description": "The ARIA name of the element.",
+          "type": "String",
+          "default": "\"\""
+        },
+        {
+          "name": "hasFocus",
+          "attribute": "hasFocus",
+          "description": "(readonly) Whether or not the element has focus.",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "tabIndex",
+          "type": "number",
+          "default": "0"
+        },
+        {
+          "name": "disabled",
+          "attribute": "disabled",
+          "description": "If true, the element will be disabled.",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "role",
+          "attribute": "role",
+          "description": "The ARIA role of the element.",
+          "type": "String",
+          "default": "\"\""
+        }
+      ]
+    },
+    {
+      "name": "qk-theme",
+      "path": "./src\\qk-theme\\qk-theme.ts",
+      "description": "- Use an avatar for attributing actions or content to specific users.\r\n- The user's name should always be present when using Avatar – either printed beside the avatar or in a tooltip.",
+      "attributes": [
+        {
+          "name": "theme",
+          "type": "string"
+        },
+        {
+          "name": "disabled",
+          "description": "If true, the element will be disabled.",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "role",
+          "description": "The ARIA role of the element.",
+          "type": "String",
+          "default": "\"\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "theme",
+          "attribute": "theme",
+          "type": "string"
+        },
+        {
+          "name": "disabled",
+          "attribute": "disabled",
+          "description": "If true, the element will be disabled.",
+          "type": "Boolean",
+          "default": "false"
+        },
+        {
+          "name": "role",
+          "attribute": "role",
+          "description": "The ARIA role of the element.",
+          "type": "String",
+          "default": "\"\""
+        }
+      ]
+    }
+  ]
+}

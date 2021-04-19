@@ -28,7 +28,7 @@ export default merge(baseConfig, {
   plugins: [
     copy({
       targets: [
-        { src: ['./demo/favicon.ong'], dest: 'dist' },
+        { src: ['./demo/favicon.ong'], dest: 'build' },
       ]
     })
   ]

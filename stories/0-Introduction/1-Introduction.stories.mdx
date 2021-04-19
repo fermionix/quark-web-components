@@ -1,0 +1,182 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import Code from '../assets/code-brackets.svg';
+import Colors from '../assets/colors.svg';
+import Comments from '../assets/comments.svg';
+import Direction from '../assets/direction.svg';
+import Flow from '../assets/flow.svg';
+import Plugin from '../assets/plugin.svg';
+import Repo from '../assets/repo.svg';
+import StackAlt from '../assets/stackalt.svg';
+
+<Meta title="Introduction" />
+
+<style>{`
+  .subheading {
+    --mediumdark: '#999999';
+    font-weight: 900;
+    font-size: 13px;
+    color: #999;
+    letter-spacing: 6px;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+
+  .link-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 10px;
+  }
+
+  @media (min-width: 620px) {
+    .link-list {
+      row-gap: 20px;
+      column-gap: 20px;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media all and (-ms-high-contrast:none) {
+  .link-list {
+      display: -ms-grid;
+      -ms-grid-columns: 1fr 1fr;
+      -ms-grid-rows: 1fr 1fr;
+    }
+  }
+
+  .link-item {
+    display: block;
+    padding: 20px 30px 20px 15px;
+    border-radius: 3px;
+    transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+                0 1px 3px 0 rgba(0, 0, 0, 0.12),
+                0 2px 1px -1px rgba(0, 0, 0, 0.2);
+    color: #333333;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .link-item:hover {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+                0 1px 10px 0 rgba(0, 0, 0, 0.12),
+                0 2px 4px -1px rgba(0, 0, 0, 0.4);
+  }
+
+  .link-item:active {
+    border-color: #1EA7FD;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .link-item strong {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 2px;
+  }
+  
+  .link-item img {
+    height: 40px;
+    width: 40px;
+    margin-right: 15px;
+    flex: none;
+  }
+
+  .link-item span {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .tip {
+    display: inline-block;
+    border-radius: 1em;
+    font-size: 11px;
+    line-height: 12px;
+    font-weight: 700;
+    background: #E7FDD8;
+    color: #66BF3C;
+    padding: 4px 12px;
+    margin-right: 10px;
+    vertical-align: top;
+  }
+
+  .tip-wrapper {
+    font-size: 13px;
+    line-height: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .tip-wrapper code {
+    font-size: 12px;
+    display: inline-block;
+  }
+
+  .github {
+    float: right;
+    margin-top: 24px;
+  }
+  
+`}</style>
+
+# Welcome to Quark Web Components
+
+Quark Web Components is a suite of native Material Design Web Components for building line of business applications. Being native Web Components means that they can be used as-is with your favorite front-end JavaScript framework or library, such as Angular, React, Vue, Polymer, LitElement, Stencil, Svelte, etc. You can even use them in a vanilla HTML/CSS and JavaScript application, if you wish.
+
+<div className="link-list">
+  <a className="link-item" href="" target="_blank">
+    <img src={Plugin} alt="getting started" />
+    <span>
+      <strong>Getting Started</strong>
+      Set up your application project and start building.
+    </span>
+  </a>
+
+  <a className="link-item" href="?path=/story/styling--page" target="_self">
+    <img src={Colors} alt="styling" />
+    <span>
+      <strong>Styling</strong>
+      All about theming, styling and typography for your applications.
+    </span>
+  </a>
+
+  <a className="link-item" href="" target="_blank">
+    <img src={StackAlt} alt="components" />
+    <span>
+      <strong>Component Catalog</strong>
+      Have a look at all the UI components that are available.
+    </span>
+  </a>
+
+  <a className="link-item" href="" target="_blank">
+    <img src={Flow} alt="samples" />
+    <span>
+      <strong>Samples</strong>
+      Check out the more complex samples using the Quark Web Components.
+    </span>
+  </a>
+
+  <a className="link-item" href="" target="_blank">
+    <img src={Repo} alt="api documentation" />
+    <span>
+      <strong>API Docs</strong>
+      Detailed documentation on the UI components and how to use them.
+    </span>
+  </a>
+
+  <a className="link-item" href="" target="_blank">
+    <img src={Code} alt="developing components" />
+    <span>
+      <strong>Developing Quark Components</strong>
+      How to go about writing Quark compatible components.
+    </span>
+  </a>
+</div>
+
+<a className="github" href="https://github.com/fermionix/quark-web-components" target="_blank" title="GitHub">
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black">
+      <path d="M12,2C6.48,2,2,6.59,2,12.25c0,4.53,2.87,8.37,6.84,9.73c0.5,0.09,0.68-0.22,0.68-0.49c0-0.24-0.01-0.89-0.01-1.74c-2.78,0.62-3.37-1.37-3.37-1.37c-0.45-1.18-1.11-1.5-1.11-1.5c-0.91-0.64,0.07-0.62,0.07-0.62c1,0.07,1.53,1.06,1.53,1.06c0.89,1.57,2.34,1.11,2.91,0.85c0.09-0.66,0.35-1.11,0.63-1.37c-2.22-0.26-4.56-1.14-4.56-5.07c0-1.12,0.39-2.03,1.03-2.75c-0.1-0.26-0.45-1.3,0.1-2.71c0,0,0.84-0.28,2.75,1.05c0.8-0.23,1.65-0.34,2.5-0.34c0.85,0,1.7,0.12,2.5,0.34c1.91-1.33,2.75-1.05,2.75-1.05c0.55,1.41,0.2,2.45,0.1,2.71c0.64,0.72,1.03,1.63,1.03,2.75c0,3.94-2.34,4.81-4.57,5.06c0.36,0.32,0.68,0.94,0.68,1.9c0,1.37-0.01,2.48-0.01,2.81c0,0.27,0.18,0.59,0.69,0.49c3.97-1.36,6.83-5.2,6.83-9.73C22,6.59,17.52,2,12,2"></path>
+  </svg>
+</a>
+

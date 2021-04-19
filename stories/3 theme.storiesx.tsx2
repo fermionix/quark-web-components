@@ -1,0 +1,50 @@
+import { Story, Meta } from '@storybook/web-components';
+import { html } from 'lit-html';
+import  '../src/theme/theme-manager';
+import '../src/qk-theme/qk-theme';
+import { Theme } from '../src/theme/theme';
+import './helpers/theme-helper';
+
+window.ThemeManager.addTheme(new Theme('green', '#80e27e', '#4caf50', '#087f23', '#ffc107'));
+
+export default {
+    title: 'Styles/qk-theme',
+    component: 'qk-theme',
+    argTypes: {
+        theme: { control: 'text' },
+    },
+} as Meta;
+
+interface ThemeProps {
+    theme: string;
+}
+
+export const ThemeStory = ({ theme }: Partial<ThemeProps>) => {
+    return html`
+        <qk-theme theme="${theme}">
+            <theme-helper></theme-helper>
+        </qk-theme>
+    `;
+};
+
+ThemeStory.storyName = 'qk-theme';
+
+const Template: Story<Partial<ThemeProps>> = (args) => ThemeStory(args);
+
+
+export const DefaultTheme = Template.bind({});
+DefaultTheme.storyName = `default`;
+DefaultTheme.args = {
+    theme: 'default',
+};
+
+
+
+export const GreenTheme = Template.bind({});
+GreenTheme.storyName = `green`;
+GreenTheme.args = {
+    theme: 'green',
+};
+
+
+

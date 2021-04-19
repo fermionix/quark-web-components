@@ -1,0 +1,145 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Styling" />
+
+<style>{`
+    .color {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .color-swatch {
+        width: 32px;
+        border: 1px solid grey;
+        margin-right: 8px;
+    }
+
+    td: {
+        background-color: yellow !important;
+    }
+`}</style>
+
+# Styling
+
+There are 4 main aspects to consider when we talk about styling with respect to the Quark Web Components, all of which are based on Material Design.
+
+* Themes
+* Setting Colors
+* Typography
+* Elevation
+
+Themes are used to specify a predefined set of colors (exposed as CSS custom variables) that are used to set various colors in UI elements. Since they use CSS custom variables, switching themes will result in all elements that use the CSS custom variables to be automatically updated with the new color value. Typography is controlled *via* a predefined set of font styles for most of the font styles defined by Material Design (a few are omitted because they aren't necessary for line of business applications). Finally, Material Design makes extensive use of 'elevation' to give the impression of raised surfaces, which is exposed as a set of CSS custom variables to set different drop-shadow heights. The sections that follow cover these topics in more detail.
+
+## Themes
+
+Theming only involves colors and follows a modified version of the [Material Design standards](https://material.io/design/color/the-color-system.html#color-theme-creation) (a mix of V1 and V2) and is implemented as a fairly large set of CSS custom variables, of which only a few are configurable.
+
+### Creating Themes
+
+The theming system only has a single default theme (blue and pink), so you'll probably want to create at least one additional theme for your application. Theme management is all done using `windows.ThemeManager`, which is initialized by simply importing the theme manager module.
+
+```javascript
+import 'quark-web-components/theme/theme-manager.js';
+```
+
+You can then create a theme like this:
+
+```javascript
+import { Theme } from 'quark-web-components/theme/theme.js';
+
+window.ThemeManager.addTheme(new Theme('green', '#80e27e', '#4caf50', '#087f23', '#ffc107'));
+```
+
+You can also add multiple themes using the `addThemes` method, which takes an array of `Theme` instances.
+
+The `Theme` constructor has the following signature (the parameters are self-explanatory):
+
+```javascript
+// Color values must be provided as CSS color value strings.
+constructor(name, primaryLight, primary, primaryDark, accent);
+```
+The default theme has the name `default` and is always available, but you can remove it or overwrite it by adding a new theme with the same name.
+
+### Setting Themes
+Setting themes should be restricted to specific elements (usually the top level application element) and is managed *via* `window.ThemeManager`. After adding themes, you can set the active theme at the document level like this:
+
+```javascript
+window.ThemeManager.theme = 'green';
+
+// or
+
+window.ThemeManager.applyTheme('green');
+```
+
+Themes can also be set at an HTML element level, which allows different themes to be applied to different elements (and their children) and is done by using the `applyTheme` method. The `applyTheme` method takes a theme name and the element to apply the theme to. If no element is provided then the theme is applied to the document (as shown above).
+
+```javascript
+window.ThemeManager.applyTheme('green', el);
+```
+
+You can clear a theme from an element using the `clearTheme` method, which takes the element to clear as the only parameter.
+
+```javascript
+window.ThemeManager.clearTheme(el);
+```
+
+You can delete a theme using the `deleteTheme` method, which takes the theme name as the only parameter. Deleting a theme will also clear it from the document element, if it's the active theme.
+
+```javascript
+window.ThemeManager.deleteTheme('green');
+```
+
+### Theme CSS Variables
+
+A theme creates the following CSS custom variables that are used by all the Quark Web Components, and should also be used by your applications for consistency.
+
+|CSS Variable                     |Can Modify|Default Value                                                                                                                       |
+|---------------------------------|:--------:|------------------------------------------------------------------------------------------------------------------------------------|
+|--theme-primary-light-color      |Yes       |<div class="color"><div class="color-swatch" style={{background: '#8E99F3'}}></div>#8E99F3</div>                                    |
+|--theme-primary-color            |Yes       |<div class="color"><div class="color-swatch" style={{background: '#5C6BC0'}}></div>#5C6BC0</div>                                    |
+|--theme-primary-dark-color       |Yes       |<div class="color"><div class="color-swatch" style={{background: '#26418F'}}></div>#26418F</div>                                    |
+|--theme-accent-color             |Yes       |<div class="color"><div class="color-swatch" style={{background: '#EC407A'}}></div>#EC407A</div>                                    |
+|--theme-window-color             |No        |<div class="color"><div class="color-swatch" style={{background: '#FAFAFA'}}></div>#FAFAFA</div>                                    |
+|--theme-surface-color            |No        |<div class="color"><div class="color-swatch" style={{background: '#FFFFFF'}}></div>#FFFFFF</div>                                    |
+|--theme-error-color              |No        |<div class="color"><div class="color-swatch" style={{background: '#E53935'}}></div>#E53935</div>                                    |
+|--theme-notification-color       |No        |<div class="color"><div class="color-swatch" style={{background: '#323232'}}></div>#323232</div>                                    | 
+|--theme-selection-color          |No        |<div class="color"><div class="color-swatch" style={{background: '#E0E0E0'}}></div>#E0E0E0</div>                                    | 
+|--theme-block-color              |No        |<div class="color"><div class="color-swatch" style={{background: '#ECECEC'}}></div>#ECECEC</div>                                    | 
+|--theme-inactive-color           |No        |<div class="color"><div class="color-swatch" style={{background: '#9E9E9E'}}></div>#9E9E9E</div>                                    |
+|--theme-on-primary-color         |No        |<div class="color"><div class="color-swatch" style={{background: '#FFFFFF'}}></div>#FFFFFF</div>                                    |
+|--theme-on-primary-inactive-color|No        |<div class="color"><div class="color-swatch" style={{background: 'rgba(255, 255, 255, 0.7)'}}></div>rgba(255, 255, 255, 0.7)</div>  |
+|--theme-on-accent-color          |No        |<div class="color"><div class="color-swatch" style={{background: '#FFFFFF'}}></div>#FFFFFF</div>                                    |
+|--theme-on-accent-inactive-color |No        |<div class="color"><div class="color-swatch" style={{background: 'rgba(255, 255, 255, 0.7)'}}></div>rgba(255, 255, 255, 0.7)</div>  |
+|--theme-on-surface-color         |No        |<div class="color"><div class="color-swatch" style={{background: 'rgba(0, 0, 0, 0.87)'}}></div>rgba(0, 0, 0, 0.87)</div>            |
+|--theme-on-window-color          |No        |<div class="color"><div class="color-swatch" style={{background: 'rgba(0, 0, 0, 0.87)'}}></div>rgba(0, 0, 0, 0.87)</div>            |
+|--theme-on-error-color           |No        |<div class="color"><div class="color-swatch" style={{background: '#FFFFFF'}}></div>#FFFFFF</div>                                    |
+|--theme-on-notification-color    |No        |<div class="color"><div class="color-swatch" style={{background: 'rgba(0, 0, 0, 0.87)'}}></div>rgba(0, 0, 0, 0.87)</div>            |
+|--theme-on-selection-color       |No        |<div class="color"><div class="color-swatch" style={{background: 'rgba(0, 0, 0, 0.87)'}}></div>rgba(0, 0, 0, 0.87)</div>            |
+|--theme-text-primary-color       |No        |<div class="color"><div class="color-swatch" style={{background: 'rgba(0, 0, 0, 0.87)'}}></div>rgba(0, 0, 0, 0.87)</div>            |
+|--theme-text-secondary-color     |No        |<div class="color"><div class="color-swatch" style={{background: 'rgba(0, 0, 0, 0.54)'}}></div>rgba(0, 0, 0, 0.54)</div>            |
+|--theme-text-hint-color          |No        |<div class="color"><div class="color-swatch" style={{background: 'rgba(0, 0, 0, 0.38)'}}></div>rgba(0, 0, 0, 0.38)</div>            |
+|--theme-text-disabled-color      |No        |<div class="color"><div class="color-swatch" style={{background: 'rgba(0, 0, 0, 0.38)'}}></div>rgba(0, 0, 0, 0.38)</div>            |
+|--theme-text-icon-color          |No        |<div class="color"><div class="color-swatch" style={{background: 'rgba(0, 0, 0, 0.38)'}}></div>rgba(0, 0, 0, 0.38)</div>            |    
+|--theme-divider-on-primary-color |No        |<div class="color"><div class="color-swatch" style={{background: 'rgba(255, 255, 255, 0.20)'}}></div>rgba(255, 255, 255, 0.20)</div>|
+|--theme-lighten-color            |No        |<div class="color"><div class="color-swatch" style={{background: 'rgba(255, 255, 255, 0.10)'}}></div>rgba(255, 255, 255, 0.10)</div>|
+|--theme-darken-color             |No        |<div class="color"><div class="color-swatch" style={{background: 'rgba(0, 0, 0, 0.05)'}}></div>rgba(0, 0, 0, 0.05)</div>           |
+
+## Setting Colors
+
+Using the theme colors is trivial, you just use the appropriate CSS custom variables wherever necessary.
+
+```css
+.some-class {
+    color: var(--theme-on-primary-color);
+    background: var(--theme-primary-color);
+    border: 1px solid var(--theme-divider-on-primary-color);
+}
+```
+
+## Typography
+
+TODO
+
+## Elevation
+
+TODO

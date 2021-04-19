@@ -1,15 +1,15 @@
-# quark-element
+# qk-element
 
-`QuarkElement` is the base class of all the Quark elements.
+`QkElement` is the base class of all the Quark elements.
 
 ## Usage
 
-You simply use `QuarkElement` as your base class, rather than `LitElement` or `HTMLElement`.
+You simply use `QkElement` as your base class, rather than `LitElement` or `HTMLElement`.
 
 ```javascript
-import { html, css, QuarkElement } from 'quark-web-components/quark-element/quark-element.js';
+import { html, css, QkElement } from 'quark-web-components/qk-element/qk-element.js';
 
-export class MyElement extends QuarkElement {
+export class MyElement extends QkElement {
     static get styles() {
         return [css`
             :host {
@@ -47,5 +47,4 @@ window.customElements.define('my-element', MyElement);
 
 | Method                | Type                                             | Description                                      |
 |-----------------------|--------------------------------------------------|--------------------------------------------------|
-| `fireMessage`         | `(name: string, detail?: object \| null \| undefined, cancelable?: boolean): boolean` | Fires a custom message.<br /><br />**name**: The message name.<br />**detail**: The message detail.<br />**cancelable**: Whether or not the message can be cancelled. |
 | `getCssVariableValue` | `(computedStyle: CSSStyleDeclaration, variableName: string, defaultValue: CSSStyleDeclaration): string` | Gets a custom CSS variable value.<br /><br />**computedStyle**: The computed style object for the element.<br />**variableName**: The CSS variable.<br />**defaultValue**: The default value to use if the variable isn't found. |
